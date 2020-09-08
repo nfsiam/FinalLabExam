@@ -25,6 +25,7 @@ Route::middleware(['sess'])->group(function(){
 
     Route::group(['middleware'=>['typeAdmin']], function(){
         Route::get('/admin', 'admin\AdminController@index');
+        Route::post('/admin/search', 'admin\AdminController@search');
 
         Route::get('/admin/add-employer', 'admin\AdminController@addEmployer');
         Route::post('/admin/add-employer', 'admin\AdminController@insertEmployer');

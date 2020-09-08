@@ -1,0 +1,23 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    }
+
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+    }
+    input[type="text"],input[type="password"]{
+        width: 300px;
+        padding: 5px;
+    }
+    a:link, a:visited {
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        background: #ddd;
+        color: black;
+    }

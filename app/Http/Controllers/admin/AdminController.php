@@ -122,4 +122,17 @@ class AdminController extends Controller
             return "something went wrong";
         }
     }
+
+    function search(Request $req)
+    {
+        $employerList = User::all()->where('type','employer');
+
+        $employerList = User::where('type','employer')
+                                ->where('username', 'like', '%'.$req->key.'%')
+                                ->orWhere('type','employer')
+                                ->where('name', 'like', '%'.$req->key.'%')
+                                ->get();
+        
+        return view('admin.emplist')->with('employerList',$employerList);
+    }
 }
