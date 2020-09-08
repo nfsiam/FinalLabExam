@@ -23,6 +23,13 @@ Route::middleware(['sess'])->group(function(){
 
     Route::group(['middleware'=>['type']], function(){
         Route::get('/admin', 'admin\AdminController@index');
+
+        Route::get('/admin/add-employer', 'admin\AdminController@addemployer');
+        Route::post('/admin/add-employer', 'admin\AdminController@insertemployer');
+
+        Route::get('/admin/all-employer', 'admin\AdminController@allEmployer');
+
     });
+    
 
 });
