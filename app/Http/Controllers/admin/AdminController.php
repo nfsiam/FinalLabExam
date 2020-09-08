@@ -54,7 +54,6 @@ class AdminController extends Controller
         
         return view('admin.allemp')->with('employerList',$employerList);
     }
-<<<<<<< HEAD
 
     function editEmployer($id)
     {
@@ -123,6 +122,4 @@ class AdminController extends Controller
             return "something went wrong";
         }
     }
-=======
->>>>>>> a6f52c723f076829fd2ae168dc403973a7427f2f
 }
