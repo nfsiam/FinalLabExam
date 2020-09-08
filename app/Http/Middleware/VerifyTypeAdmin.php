@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class VerifyType
+class VerifyTypeAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,7 +15,7 @@ class VerifyType
      */
     public function handle($request, Closure $next)
     {
-        if($request->session()->has('type'))
+        if($request->session()->get('type') == 'admin')
         {
             return $next($request);
         }

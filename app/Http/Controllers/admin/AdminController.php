@@ -98,7 +98,7 @@ class AdminController extends Controller
 
     }
 
-    function removeemployer($id)
+    function removeEmployer($id)
     {
         $res = User::find($id);
         if($res)
@@ -111,7 +111,7 @@ class AdminController extends Controller
         }
     }
 
-    function deleteemployer(Request $req)
+    function deleteEmployer(Request $req)
     {
         if(User::destroy($req->id))
         {

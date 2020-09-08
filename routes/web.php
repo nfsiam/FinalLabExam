@@ -21,21 +21,36 @@ Route::get('/logout', 'LogoutController@index');
 
 Route::middleware(['sess'])->group(function(){
 
-    Route::group(['middleware'=>['type']], function(){
+    Route::group(['middleware'=>['typeAdmin']], function(){
         Route::get('/admin', 'admin\AdminController@index');
 
-        Route::get('/admin/add-employer', 'admin\AdminController@addemployer');
-        Route::post('/admin/add-employer', 'admin\AdminController@insertemployer');
+        Route::get('/admin/add-employer', 'admin\AdminController@addEmployer');
+        Route::post('/admin/add-employer', 'admin\AdminController@insertEmployer');
 
         Route::get('/admin/all-employer', 'admin\AdminController@allEmployer');
 
-        Route::get('/admin/edit-employer/{id}', 'admin\AdminController@editemployer');
-        Route::post('/admin/edit-employer/{id}', 'admin\AdminController@updateemployer');
+        Route::get('/admin/edit-employer/{id}', 'admin\AdminController@editEmployer');
+        Route::post('/admin/edit-employer/{id}', 'admin\AdminController@updateEmployer');
 
-        Route::get('/admin/delete-employer/{id}', 'admin\AdminController@removeemployer');
-        Route::post('/admin/delete-employer/{id}', 'admin\AdminController@deleteemployer');
+        Route::get('/admin/delete-employer/{id}', 'admin\AdminController@removeEmployer');
+        Route::post('/admin/delete-employer/{id}', 'admin\AdminController@deleteEmployer');
+
+    });
+
+    Route::group(['middleware'=>['typeEmployer']], function(){
+        Route::get('/employer', 'employer\EmployerController@index');
+
+        Route::get('/employer/add-job', 'employer\EmployerController@addJob');
+        Route::post('/employer/add-job', 'employer\EmployerController@insertJob');
+
+        Route::get('/employer/all-job', 'employer\EmployerController@allJob');
+
+        Route::get('/employer/edit-job/{id}', 'employer\EmployerController@editJob');
+        Route::post('/employer/edit-job/{id}', 'employer\EmployerController@updateJob');
+
+        Route::get('/employer/delete-job/{id}', 'employer\EmployerController@removeJob');
+        Route::post('/employer/delete-job/{id}', 'employer\EmployerController@deleteJob');
 
     });
     
-
 });
