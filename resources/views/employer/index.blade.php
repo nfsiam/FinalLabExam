@@ -8,6 +8,7 @@
 <body>
     <div>
         <h1>welcome {{session('username')}}</h1>
+        <a href="/">Home</a>
         <a href="/employer">Dashboard</a>
         <a href="/logout">logout</a>
     </div>

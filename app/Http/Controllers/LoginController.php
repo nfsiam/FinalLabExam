@@ -12,14 +12,15 @@ class LoginController extends Controller
     {
         if($req->session()->has('username'))
         {
-            if($req->session()->get('type') == 'admin')
-            {
-                return redirect('/admin');
-            }
-            else
-            {
-                return redirect('/employer');
-            }
+            // if($req->session()->get('type') == 'admin')
+            // {
+            //     return redirect('/admin');
+            // }
+            // else
+            // {
+            //     return redirect('/employer');
+            // }
+            return redirect('/');
         }
         else
         {
@@ -39,13 +40,15 @@ class LoginController extends Controller
             if($user[0]['type']=='admin')
             {
                 $req->session()->put('type','admin');
-                return redirect('/admin');
+                // return redirect('/admin');
             }
             else
             {
                 $req->session()->put('type','employer');
-                return redirect('/employer');
+                // return redirect('/employer');
             }
+            return redirect('/');
+
         }
         else
         {
